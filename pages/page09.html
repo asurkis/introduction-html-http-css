@@ -1,0 +1,46 @@
+<h1>HTTP</h1>
+<p>
+  So, we've got the format in which the documents are <strong>presented</strong>.
+  But what about <strong>transfering</strong>?
+  For that the HyperText Transfer Protocol exists.
+  It works like this:
+</p>
+<ol>
+  <li>The client establishes connection with the server</li>
+  <li>
+    The client sends a <strong>request</strong> —
+    a description of the resource that the client wants,
+    for example, <code>/index.php</code>
+  </li>
+  <li>
+    The server processes the <strong>request</strong>
+    and forms the <strong>response</strong>.
+    On this step the server figures out
+    which exactly document the client wants,
+    whether or not it is possible to provide it,
+    and forms the text of the document to send back.
+    The document can be in HTML,
+    or any other text format such as CSS, JS, JSON, etc.
+  </li>
+  <li>
+    The server sends the <strong>response</strong> —
+    either the resource requested,
+    or a description of an error.
+    HTTP has error codes that allow
+    the client to quickly analyze
+    whether the response is OK,
+    should be sent elsewhere,
+    there is an error on the client side,
+    or an error on the server side.
+  </li>
+  <li>
+    The client processes the response (and the error code).
+    The response can contain <strong>absolutely any</strong> text,
+    usually with a hint about its format.
+    If the client is a browser and the response is in HTML,
+    then the browser sends other requests to download
+    the style sheets and scripts,
+    and then starts displaying the document.
+  </li>
+  <li>Either the client or the server stop the connection.</li>
+</ol>

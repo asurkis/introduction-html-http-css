@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+  <h1 id="example">Example HTML document</h1>
+  <h2>What HTML was initially meant to solve</h2>
+  <p>
+    Initially HyperText Markup Language was meant for writing
+    documents that don't necessarily have to be printed but rather can
+    be displayed on screen.
+  </p>
+
+  <p>
+    For documents it is useful to split text into paragraphs,
+    as well as have some ways to <strong>emphasize</strong>
+    some <em>particular</em> elements.
+  </p>
+
+  <h3>Unordered lists</h3>
+
+  <ul>
+    <li>Another useful thing is lists;</li>
+    <li>This is a bullet list;</li>
+    <li>And this is another element of that bullet list;</li>
+  </ul>
+
+  <h3>Ordered lists</h3>
+
+  <ol>
+    <li>Of course ordered lists are also important;</li>
+    <li>In fact, HTML has:</li>
+    <ul>
+      <li>Ordered lists — "ol"</li>
+      <li>Unordered lists — "ul"</li>
+    </ul>
+    <li>
+      <ol>
+        <li>
+          Lists
+          <ul>
+            <li>
+              can
+              <ol>
+                <li>
+                  be
+                  <ul>
+                    <li>embedded</li>
+                  </ul>
+                </li>
+              </ol>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </li>
+    <li>List items are always "li"</li>
+  </ol>
+
+  <h3>Tables</h3>
+  <p>Aside from lists a very important thing in documents are tables:</p>
+  <table class="check">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mainframe</td>
+        <td>1</td>
+        <td>20 000 &curren;</td>
+        <!-- 20 -->
+      </tr>
+      <tr>
+        <td>Minor servers</td>
+        <td>2</td>
+        <td>10 000 &curren;</td>
+        <!-- 20 -->
+      </tr>
+      <tr>
+        <td>Server rack</td>
+        <td>3</td>
+        <td>5 000 &curren;</td>
+        <!-- 15 -->
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Total</td>
+        <td colspan="2">35 000 &curren;</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <p>Another example of using tables:</p>
+  <table class="matrix">
+    <thead>
+      <tr>
+        <th>True \ Estimated</th>
+        <th>Positive</th>
+        <th>Negative</th>
+        <th>Precision</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Positive</th>
+        <td class="true">50</td>
+        <td class="false">60</td>
+        <td>50 / 110 = 45.5%</td>
+      </tr>
+      <tr>
+        <th>Negative</th>
+        <td class="false">70</td>
+        <td class="true">80</td>
+        <td>80 / 150 = 53.3%</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>Precision</th>
+        <td>50 / 120 = 41.7%</td>
+        <td>80 / 140 = 57.1%</td>
+        <td>130 / 260 = 50.0%</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <p>
+    Often scientific documents reference each other,
+    and for such references the mechanism of links,
+    or "anchors", is used.
+    We can make a clickable link to either
+    <a href="index.php">a different document</a>,
+    or
+    <a href="#attributes">specific part of this document</a>.
+    We can reference
+    <a href="https://example.com">a different domain entirely</a>,
+    but more on that later.
+  </p>
+
+  <p>
+    Sometimes images are also required in the documents.
+  </p>
+  <img src="Lenna.png" alt="Lenna" style="width:256px">
+
+  <h1>How is this achieved</h1>
+  <p>
+    Surely, we can see that HTML fits for writing documents,
+    and somehow is used to exchange them. But how exactly does it work?
+  </p>
+
+  <p>
+    First of all, the developers have noticed that the overall structure
+    of the documents looks like a hierarchy:
+  </p>
+  <ol>
+    <li>List items are parts of the list</li>
+    <li>The list is a part of the paragraph</li>
+    <li>The paragraph is a part of the document</li>
+    <li>And so on</li>
+  </ol>
+
+  <p>
+    A text format seems useful,
+    because it is human editable — you can pick any text editor, and just edit the file.
+  </p>
+
+  <p>
+    Turns out, that angular brackets — &lt; and &gt;
+    — are used rarely in the actual texts,
+    so in HTML they are used to mark the "tags".
+    A tag is an element of the document hierarchy,
+    like table cell, table row, table, etc.
+    So a "table data cell" looks like this:
+    <code>&lt;td&gt;Some text&lt;/td&gt;</code>
+  </p>
+
+  <p>
+    When we need to insert a "less than" or "greater than"
+    into the page we can use
+    <code>&amp;lt;</code> or <code>&amp;gt;</code>,
+    and when we need an ampersand, then we use
+    <code>&amp;amp;</code>
+  </p>
+
+  <p id="attributes">
+    In addition, it is useful to give "attributes" to tags,
+    such as the reference for the hyperlink,
+    or the unique identifier by which an element can be referenced.
+    With attributes the element starts looking like this:
+    <code>&lt;p id="attributes"&gt;(some text about attributes)&lt;/p&gt;</code>
+  </p>
+
+  <p>
+    Aside from the body of the document,
+    often we need the "meta-information",
+    such as the title of the document,
+    its encoding,
+    and links to other parts of it
+    for which a separate language would be more fitting.
+    So the overall structure of the document
+    looks like this:
+  </p>
+  <pre>
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;Sample title&lt;/title&gt;
+        &lt;script src="script.js"&gt;&lt;/script&gt;
+        &lt;link rel="stylesheet" href="style.css"&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;p&gt;Sample text&lt;/p&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  </pre>
+
+  <h1>HTTP</h1>
+  <p>
+    So, we've got the format in which the documents are <strong>presented</strong>.
+    But what about <strong>transfering</strong>?
+    For that the HyperText Transfer Protocol exists.
+    It works like this:
+  </p>
+  <ol>
+    <li>The client establishes connection with the server</li>
+    <li>
+      The client sends a <strong>request</strong> —
+      a description of the resource that the client wants,
+      for example, <code>/index.php</code>
+    </li>
+    <li>
+      The server processes the <strong>request</strong>
+      and forms the <strong>response</strong>.
+      On this step the server figures out
+      which exactly document the client wants,
+      whether or not it is possible to provide it,
+      and forms the text of the document to send back.
+      The document can be in HTML,
+      or any other text format such as CSS, JS, JSON, etc.
+    </li>
+    <li>
+      The server sends the <strong>response</strong> —
+      either the resource requested,
+      or a description of an error.
+      HTTP has error codes that allow
+      the client to quickly analyze
+      whether the response is OK,
+      should be sent elsewhere,
+      there is an error on the client side,
+      or an error on the server side.
+    </li>
+    <li>
+      The client processes the response (and the error code).
+      The response can contain <strong>absolutely any</strong> text,
+      usually with a hint about its format.
+      If the client is a browser and the response is in HTML,
+      then the browser sends other requests to download
+      the style sheets and scripts,
+      and then starts displaying the document.
+    </li>
+    <li>Either the client or the server stop the connection.</li>
+  </ol>
+
+  <h1>Inner structure of HTML</h1>
+  <h2>Brief introduction to rendering</h2>
+  <p>
+    Classical programs render their content by giving direct commands
+    of what, where (on screen), and how (sequence of commands) to draw.
+    For example:
+  </p>
+  <ol>
+    <li>Draw rectangle (0, 0) with size (80, 80)</li>
+    <li>Draw text "Hello," at (10, 30)</li>
+    <li>Draw text "world!" at (10, 50)</li>
+  </ol>
+  <p>which produces result like this:</p>
+  <svg width="82" height="82">
+    <rect x="1" y="1" width="80" height="80" style="fill:white;stroke:black;"></rect>
+    <text x="10" y="30">Hello,</text>
+    <text x="10" y="50">world!</text>
+  </svg>
+  <p>
+    This gives a fine-grained control,
+    but at the cost of extreme verbosity of the displaying process.
+    HTML just tells "draw this somehow, I only want these conditions to be satisfied".
+    The "conditions" are written in the short declarative form of Cascade Style Sheets.
+  </p>
+
+  <h2>CSS</h2>
+  <p>
+    In order to specify a style in CSS we write a "selector"
+    — a description of what the style should apply to,
+    and "properties" — a description of what should be changed.
+    For instance,
+  </p>
+  <pre>
+    .true {
+      background-color: lightgreen;
+    }
+  </pre>
+  <p>
+    means: for elements that have class "true" use light green background color.
+  </p>
+</body>
+
+</html>

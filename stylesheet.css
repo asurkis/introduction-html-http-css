@@ -1,0 +1,46 @@
+table.check tbody td + td, table.check tfoot * td:last-child {
+  text-align: right;
+}
+
+table.matrix tbody th {
+  text-align: left;
+}
+
+table.matrix * td {
+  text-align: right;
+  font-family: monospace;
+}
+
+table.matrix tfoot td:last-child {
+  background-color: lightyellow;
+}
+
+/* table, tr {
+  border-spacing: 0;
+}
+
+table *:first-child tr:first-child td,
+table *:first-child tr:first-child th,
+table > tr:first-child td,
+table > tr:first-child th {
+  border-top: 1px solid black;
+}
+
+th:first-child, td:first-child {
+  border-left: 1px solid black;
+} */
+
+td, th {
+  padding: .5em;
+  border: 1px solid black;
+  /* border-right: 1px solid black;
+  border-bottom: 1px solid black; */
+}
+
+.true {
+  background-color: lightgreen;
+}
+
+.false {
+  background-color: lightpink;
+}
