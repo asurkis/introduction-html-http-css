@@ -1,0 +1,24 @@
+<h1>Inner structure of HTML</h1>
+<h2>Brief introduction to rendering</h2>
+<p>
+  Classical programs render their content by giving direct commands
+  of what, where (on screen), and how (sequence of commands) to draw.
+  For example:
+</p>
+<ol>
+  <li>Draw rectangle (0, 0) with size (80, 80)</li>
+  <li>Draw text "Hello," at (10, 30)</li>
+  <li>Draw text "world!" at (10, 50)</li>
+</ol>
+<p>which produces result like this:</p>
+<svg width="82" height="82">
+  <rect x="1" y="1" width="80" height="80" style="fill:white;stroke:black;"></rect>
+  <text x="10" y="30">Hello,</text>
+  <text x="10" y="50">world!</text>
+</svg>
+<p>
+  This gives a fine-grained control,
+  but at the cost of extreme verbosity of the displaying process.
+  HTML just tells "draw this somehow, I only want these conditions to be satisfied".
+  The "conditions" are written in the short declarative form of Cascade Style Sheets.
+</p>

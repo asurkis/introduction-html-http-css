@@ -1,8 +1,8 @@
 <?php
+$LAST_PAGE = 12;
 $page = $_GET['page'];
 if (!$page) $page = 1;
-if ($page < 1) $page = 1;
-if ($page > 9) $page = 9;
+$page = max(1, min($page, $LAST_PAGE));
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ if ($page > 9) $page = 9;
     printf('href="?page=%d"', $page - 1);
   } ?> >&lt;&lt; Previous</a>
   <a <?php
-  if ($page >= 9) {
+  if ($page >= $LAST_PAGE) {
     echo 'style="visibility: hidden"';
   } else {
     printf('href="?page=%d"', $page + 1);
