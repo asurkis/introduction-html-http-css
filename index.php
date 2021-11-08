@@ -1,5 +1,5 @@
 <?php
-$LAST_PAGE = 12;
+$LAST_PAGE = 13;
 $page = $_GET['page'];
 if (!$page) $page = 1;
 $page = max(1, min($page, $LAST_PAGE));

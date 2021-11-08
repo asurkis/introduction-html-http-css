@@ -1,0 +1,49 @@
+
+  <h2>CSS selectors</h2>
+  <p>
+    <code>*</code> — select all elements.
+  </p>
+  <p>
+    <code>type1</code> — select elements of specific type, like
+    <code>code { background-color: #eeee; }</code>.
+  </p>
+  <p>
+    <code>.id1</code> — select elements of specific id, like
+    <code id="example-id">#example-id { color: green; }</code>
+  </p>
+  <p>
+    <code>.class1</code> — select elements that have specific class, like
+    <code class="true">.true { background-color: lightgreen; }</code>.
+    Important note: an element can have multiple classes.
+  </p>
+  <p>
+    <code>(selector1)(selector2)</code> — select elements that
+    fit (selector1) and (selector2) at once, like
+    <code class="true false">.true.false { background-color: yellow; }</code>
+  </p>
+  <p>
+    <code>(selector1),(selector2)</code> — select elements that fit
+    either (selector1) or (selector2).
+  </p>
+  <p>
+    <code>(selector1) (selector2)</code> — select elements that fit (selector2)
+    and are located within elements that fit (selector1), like
+    <code>p code { color: #111; }</code>
+  </p>
+  <p>
+    <code>(selector1)&gt;(selector2)</code> — select elements that fit (selector2),
+    <em>direct parent</em> of which fits (selector1).
+  </p>
+  <p>
+    <code>(selector1)+(selector2)</code> — select elements that fit (selector2)
+    and are located right after elements that fit (selector1).
+  </p>
+  <p>
+    <code>(selector1)~(selector2)</code> — select elements that fit (selector2)
+    and are located right before elements that fit (selector1).
+  </p>
+  <p>
+    Other CSS selectors we can replace with our code in the parser,
+    but you can read about them
+    <a href="https://www.w3schools.com/cssref/css_selectors.asp">at W3Schools</a>
+  </p>

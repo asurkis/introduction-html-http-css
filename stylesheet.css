@@ -44,3 +44,19 @@ td, th {
 .false {
   background-color: lightpink;
 }
+
+code {
+  background-color: #ddd;
+}
+
+#example-id {
+  color: green;
+}
+
+.true.false {
+  background-color: yellow;
+}
+
+p code {
+  color: #111;
+}
